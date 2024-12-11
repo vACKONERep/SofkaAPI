@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/pets\/petstore[1:8]","start":1733877272984,"end":1733877274581,"title":"src\/test\/java\/pets\/petstore[1:8] 19:34:32.984-19:34:34.581 Add a new pet to the store","className":"failed"},{"id":2,"group":1,"content":"src\/test\/java\/pets\/petstore[2:15]","start":1733877274588,"end":1733877274866,"title":"src\/test\/java\/pets\/petstore[2:15] 19:34:34.588-19:34:34.866 Get a pet by ID","className":"failed"},{"id":3,"group":1,"content":"src\/test\/java\/pets\/petstore[3:22]","start":1733877274871,"end":1733877275113,"title":"src\/test\/java\/pets\/petstore[3:22] 19:34:34.871-19:34:35.113 Update pet's name and status to \"sold\"","className":"failed"},{"id":4,"group":1,"content":"src\/test\/java\/pets\/petstore[4:29]","start":1733877275117,"end":1733877275360,"title":"src\/test\/java\/pets\/petstore[4:29] 19:34:35.117-19:34:35.360 Get pet by status \"sold\"","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "id": 12345,
+  "category": {
+    "id": 0,
+    "name": "string"
+  },
+  "name": "Doggie",
+  "photoUrls": [
+    "http://example.com/doggie.jpg"
+  ],
+  "tags": [
+    {
+      "id": 0,
+      "name": "string"
+    }
+  ],
+  "status": "available"
+}
